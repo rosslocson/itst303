@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results - Fun Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+
+   
+</head>
+
+<body class="bg-gradient-to-br from-[#091057] to-[#024CAA] flex justify-center items-center min-h-screen relative">
+
+    <!-- Trails (Animated Effects) -->
+    <div class="trail opacity-20"></div>
+    <div class="trail opacity-30"></div>
+    <div class="trail opacity-40"></div>
+    <div class="trail opacity-50"></div>
+
+    <!-- Main Card with glass-like effect -->
+    <div class="glass-card bg-white bg-opacity-30 backdrop-blur-lg p-10 rounded-3xl shadow-2xl w-full max-w-lg text-center z-10 relative space-y-4">
+
+        <!-- Title -->
+        <h1 id="title" class="text-4xl font-extrabold text-[#024CAA] drop-shadow-lg">Great Job!</h1>
+
+        <!-- User Info -->
+        <p id="user-name" class="text-2xl text-[#2F3A46] font-semibold"></p>
+        <p id="final-score" class="text-3xl text-[#DBB347] font-bold"></p>
+        <p id="feedback" class="text-l text-[#2F3A46] opacity-100"></p>
+
+        <!-- Animated Icon (Image) -->
+        <div class="mt-6">
+            <img id="result-icon" src="star.png" alt="Spinning Icon" class="w-24 h-24 animate-spin mx-auto"> </div>
+        <!-- Action Buttons -->
+        <div class="mt-8 space-x-4 flex justify-center">
+            <a href="quiz.html">
+                <button class="bg-gradient-to-r from-[#024CAA] to-[#091057] text-white py-3 px-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    Retry Quiz
+                </button>
+            </a>
+            <a href="index.html">
+                <button class="bg-gradient-to-r from-[#DBB347] to-[#024CAA] text-white py-3 px-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    Home
+                </button>
+            </a>
+        </div>
+
+        
+
+    </div>
+
+    <script>
+        // Get user details and score from localStorage
+        const user = localStorage.getItem("quizUser") || "Player";
+        const score = localStorage.getItem("quizScore") || 0;
+
+        // Update the title with the user's name
+        document.getElementById("title").textContent = `Great Job, ${user}!`;
+
+        // Display user score and feedback
+        document.getElementById("final-score").textContent = `You scored: ${score}/10`;
+// Provide different feedback based on the score
+const feedback = document.getElementById("feedback");
+
+if (score >= 7) {
+    feedback.textContent = "You're a star!";
+} else if (score >= 5) {
+    feedback.textContent = "Good job, keep going!";
+} else {
+    feedback.textContent = "Keep practicing.";
+}
+        // Change the icon based on the score
+        const icon = document.getElementById("result-icon");
+
+        if (score >= 7) {
+            // If score is 7 or higher, show a "star" icon (success)
+            icon.src = "star.png.png";  // Change this to the path of your "star" image
+        } else if (score >= 5) {
+            // If score is between 5 and 6, show a "thumbs up" icon (encouragement)
+            icon.src = "thumbs-up.png";  // Change this to the path of your "thumbs up" image
+        } else {
+            // If score is less than 5, show a "sad face" icon (encouragement to try again)
+            icon.src = "sad-face.png";  // Change this to the path of your "sad face" image
+        }
+    </script>
+
+</body>
+
+</html>

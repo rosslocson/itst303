@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeracy Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<script>
+  // Check if user is logged in
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  if (!loggedInUser) {
+    alert("Please log in first.");
+    window.location.href = "login.html";
+  }
+</script>
+
+<body class="bg-gradient-to-br from-[#091057] to-[#024CAA] flex justify-center items-center min-h-screen relative">
+    <!-- Trails (Animated Effects) -->
+    <div class="trail opacity-20"></div>
+    <div class="trail opacity-30"></div>
+    <div class="trail opacity-40"></div>
+    <div class="trail opacity-50"></div>
+
+    <!-- Main Card with glass-like effect -->
+    <div class="glass-card bg-white bg-opacity-30 backdrop-blur-lg p-10 rounded-3xl shadow-2xl w-full max-w-lg text-center z-10 relative">
+        <h1 class="text-4xl font-extrabold text-[#091057] mb-6 tracking-widest">Welcome to the Numeracy Quiz</h1>
+        <p class="text-[#DBD3D3] opacity-80 text-lg mb-8">Enter your name and select a difficulty level to get started!</p>
+
+        <!-- Input for Username -->
+        <input id="username" type="text" placeholder="Your Name"
+            class="input-field mt-4 w-full text-center font-bold p-4 rounded-lg border-2 border-[#EC8305] focus:outline-none focus:ring-4 focus:ring-[#EC8305] transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-2xl" />
+
+        <!-- Select Difficulty Level -->
+        <select id="difficulty"
+            class="input-field mt-4 w-full p-4 rounded-lg border-2 border-[#EC8305] focus:outline-none focus:ring-4 focus:ring-[#EC8305] transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-2xl text-center font-bold">
+            <option value="easy" class="text-gray-800">Easy</option>
+            <option value="medium" class="text-gray-800">Medium</option>
+            <option value="hard" class="text-gray-800">Hard</option>
+        </select>
+
+        <!-- Start Quiz Button -->
+        <button onclick="startQuiz()"
+            class="btn-3d bg-gradient-to-r from-[#024CAA] to-[#091057] text-white mt-6 py-3 px-6 rounded-lg font-bold text-lg transition-transform transform hover:scale-110 hover:shadow-2xl hover:bg-gradient-to-l hover:from-[#091057] hover:to-[#024CAA] shadow-xl">
+            Start Quiz
+        </button>
+    </div>
+
+    <script>
+        // Function to start the quiz and save username & difficulty to local storage
+        function startQuiz() {
+            const name = document.getElementById("username").value.trim();
+            const level = document.getElementById("difficulty").value;
+
+            if (name === "") {
+                alert("Please enter your name!");
+                return;
+            }
+
+            localStorage.setItem("quizUser", name);
+            localStorage.setItem("quizLevel", level);
+
+            // Redirect to the game mechanics page
+            window.location.href = "game-mechanics.html";
+        }
+    </script>
+    <button onclick="logoutUser()" class="text-sm underline text-white mt-4">Logout</button>
+
+<script>
+  function logoutUser() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+
+</html>

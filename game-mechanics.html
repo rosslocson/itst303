@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mechanics - Numeracy Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-[#091057] to-[#024CAA] flex justify-center items-center min-h-screen relative">
+    <!-- Trails (Animated Effects) -->
+    <div class="trail opacity-20"></div>
+    <div class="trail opacity-30"></div>
+    <div class="trail opacity-40"></div>
+    <div class="trail opacity-50"></div>
+
+    <!-- Main Card with glass-like effect -->
+    <div class="glass-card bg-white bg-opacity-30 backdrop-blur-lg p-10 rounded-3xl shadow-2xl w-full max-w-lg text-center z-10 relative">
+        <h1 class="text-4xl font-extrabold text-[#091057] mb-6 tracking-widest">Game Mechanics</h1>
+        <p class="text-[#DBD3D3] opacity-80 text-lg mb-8">Please read the instructions below before starting the quiz!</p>
+
+        <ul class="list-disc text-left text-lg text-[#2F3A46] mb-6 mx-4">
+            <li>Answer 10 multiple-choice questions.</li>
+            <li>Each question has 4 options. Choose the correct one.</li>
+            <li>You'll get feedback after completing the quiz!</li>
+            <li>Good luck!</li>
+        </ul>
+
+        <button onclick="startQuiz()"
+            class="btn-3d bg-gradient-to-r from-[#024CAA] to-[#091057] text-white mt-6 py-3 px-6 rounded-lg font-bold text-lg transition-transform transform hover:scale-110 hover:shadow-2xl hover:bg-gradient-to-l hover:from-[#091057] hover:to-[#024CAA] shadow-xl">
+            Ready! Start the Quiz
+        </button>
+    </div>
+
+    <script>
+        // Function to start the quiz
+        function startQuiz() {
+            const name = localStorage.getItem("quizUser");
+            const level = localStorage.getItem("quizLevel");
+
+            if (!name || !level) {
+                alert("Please enter your name and select a difficulty level!");
+                return;
+            }
+
+            window.location.href = "quiz.html";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Numeracy Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    .trail {
+      position: absolute;
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+      animation: float 12s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px) translateX(0px);
+      }
+
+      50% {
+        transform: translateY(-50px) translateX(20px);
+      }
+
+      100% {
+        transform: translateY(0px) translateX(0px);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-[#091057] to-[#024CAA] flex justify-center items-center min-h-screen relative">
+
+  <!-- Trails (Animated Effects) -->
+  <div class="trail opacity-20"></div>
+  <div class="trail opacity-30"></div>
+  <div class="trail opacity-40"></div>
+  <div class="trail opacity-50"></div>
+
+  <!-- Main Quiz Card -->
+  <div
+    class="glass-card bg-white bg-opacity-30 backdrop-blur-lg p-10 rounded-3xl shadow-2xl w-full max-w-3xl text-center z-10 relative">
+
+    <!-- Top Info -->
+    <div class="flex justify-between items-center mb-4">
+      <span id="user-name" class="text-xl font-bold drop-shadow-lg text-[#EC8305]">Welcome!</span>
+      <span
+        class="text-sm bg-black/30 px-3 py-1 rounded-full font-semibold tracking-wide text-[#DBD3D3]">Time Left:
+        <span id="timer">--:--</span></span>
+    </div>
+
+    <!-- Question Section -->
+    <h3 id="question-number" class="text-lg font-semibold mb-2 text-[#DBD3D3] tracking-wide"></h3>
+    <h2 id="question-text" class="text-3xl font-extrabold mb-6 text-white drop-shadow-md">Loading question...</h2>
+
+    <!-- Answer Buttons -->
+    <div id="answer-buttons" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+      <!-- Dynamic answer buttons go here -->
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex flex-wrap justify-between items-center gap-4 mt-6">
+
+      <a href="index.html"
+        class="bg-gradient-to-r from-[#024CAA] to-[#091057] hover:bg-gradient-to-l text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+        Home
+      </a>
+
+      <button onclick="window.location.href='index.html'"
+        class="bg-gradient-to-r from-[#EC8305] to-[#091057] hover:bg-gradient-to-l text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+        Cancel
+      </button>
+
+      <button id="next-btn"
+        class="bg-gradient-to-r from-[#2F3A46] to-[#DBB347] hover:bg-gradient-to-l text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hidden">
+        Next
+      </button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+
+</html>

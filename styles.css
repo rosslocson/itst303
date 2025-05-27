@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.btn-3d {
+    /*background: linear-gradient(45deg, #f5f5f5, #f3f3f3);*/
+    padding: 12px 24px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.correct {
+    background-color: #4CAF50;
+    /* Green for correct */
+    border-color: #388E3C;
+    transition: background-color 0.3s ease;
+}
+
+/* Incorrect answer feedback */
+.incorrect {
+    background-color: #F44336;
+    /* Red for incorrect */
+    border-color: #D32F2F;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for buttons when disabled */
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+.trail {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    opacity: 0.3;
+    animation: trailAnimation 5s infinite linear;
+    z-index: -1;
+}
+
+@keyframes trailAnimation {
+    0% {
+        transform: translateX(-100vw) translateY(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateX(100vw) translateY(0);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateX(-100vw) translateY(0);
+        opacity: 0.3;
+    }
+}
+
+/* Random trail creation */
+.trail:nth-child(1) {
+    animation-delay: 0s;
+    top: 10%;
+    left: 10%;
+}
+
+.trail:nth-child(2) {
+    animation-delay: 1s;
+    top: 30%;
+    left: 30%;
+}
+
+.trail:nth-child(3) {
+    animation-delay: 2s;
+    top: 50%;
+    left: 50%;
+}
+
+.trail:nth-child(4) {
+    animation-delay: 3s;
+    top: 70%;
+    left: 70%;
+}
