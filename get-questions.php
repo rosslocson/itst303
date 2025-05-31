@@ -10,7 +10,7 @@ $dotenv->load();
 $client = new Client($_ENV["MONGODB_URI"]);
 $collection = $client->quizgame->questions;
 
-$questions = $collection->aggregate([['$sample' => ['size' => 5]]]);
+$questions = $collection->aggregate([['$sample' => ['size' => 10]]]);
 $output = [];
 
 foreach ($questions as $q) {

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Alice",
+    "score": 10,
+    "date": "2025-05-25T15:30:00Z"
+  },
+  {
+    "name": "Bob",
+    "score": 8,
+    "date": "2025-05-26T11:45:00Z"
+  },
+  {
+    "name": "Charlie",
+    "score": 9,
+    "date": "2025-05-27T13:10:00Z"
+  },
+  {
+    "name": "Diana",
+    "score": 7,
+    "date": "2025-05-27T14:50:00Z"
+  },
+  {
+    "name": "Ethan",
+    "score": 10,
+    "date": "2025-05-28T09:00:00Z"
+  },
+  {
+    "name": "Fiona",
+    "score": 6,
+    "date": "2025-05-28T10:20:00Z"
+  },
+  {
+    "name": "George",
+    "score": 8,
+    "date": "2025-05-28T11:15:00Z"
+  },
+  {
+    "name": "Hannah",
+    "score": 9,
+    "date": "2025-05-28T12:30:00Z"
+  },
+  {
+    "name": "Ian",
+    "score": 7,
+    "date": "2025-05-28T13:45:00Z"
+  },
+  {
+    "name": "Julia",
+    "score": 10,
+    "date": "2025-05-28T14:55:00Z"
+  }
+]
